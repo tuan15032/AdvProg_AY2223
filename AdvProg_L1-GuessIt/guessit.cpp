@@ -31,7 +31,7 @@ bool checkSuccess(string answer) {
 
 bool checkContinuePlaying(char isContinued) {
     bool result = false;
-    if (isContinued=='Y' || isContinued=='y') {result=true ;} 
+    if (isContinued=='Y' || isContinued=='y') {return true ; } 
     return result;
 }
 
