@@ -6,7 +6,8 @@
 using namespace std;
 
 int generateRandomNumber() {
-    int x = rand() % 100+1 ;   
+    int x = rand() % 100+1 ;  
+    cout<<x ;  
     return x;
 }
 
@@ -30,7 +31,7 @@ bool checkSuccess(string answer) {
 
 bool checkContinuePlaying(char isContinued) {
     bool result = false;
-    if (isContinued=='Y') result=true ; 
+    if (isContinued=='Y' || isContinued=='y') {result=true ;} 
     return result;
 }
 
