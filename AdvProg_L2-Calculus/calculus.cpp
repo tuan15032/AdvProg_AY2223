@@ -2,10 +2,7 @@
 #include <string>
 #include <cmath>
 
-using std::string;
-using std::cout;
-using std::endl;
-using std::stod;
+using namespace std ;
 
 
 double mySin(double x);
@@ -18,10 +15,18 @@ double mySqrt(double x);
     Returns:
         double: cosine of x
 ***/
-double myCos(double x) 
-{
-    return 0.0;
+double myCos(double x) {
+    double result = 0;
+    double term = 1;
+    int n = 0;
+    while (std::fabs(term) >= 0.001) {
+        result += term;
+        term = -term * x * x / ((2 * n + 2) * (2 * n + 1));
+        n++;
+    }
+    return result;
 }
+
 
 /***
     Args:
@@ -29,9 +34,16 @@ double myCos(double x)
     Returns:
         double: sine of x
 ***/
-double mySin(double x)
-{
-    return 0.0;
+double mySin(double x) {
+    double result = 0;
+    double term = x;
+    int n = 1;
+    while (std::fabs(term) >= 0.001) {
+        result += term;
+        term = -term * x * x / ((2 * n) * (2 * n + 1));
+        n++;
+    }
+    return result;
 }
 
 
@@ -41,12 +53,22 @@ double mySin(double x)
     Returns:
         double: square root of x
 ***/
+
 double mySqrt(double x) {
     if (x < 0) {
         cout << "Invalid argument" << endl;
         exit(1);
     }
-
-    
-    return 0;
+    double result = x / 2;
+    while (std::fabs(result * result - x) >= 0.001) {
+        result = (result + x / result) / 2;
+    }
+    return result;
 }
+
+
+
+
+
+
+
