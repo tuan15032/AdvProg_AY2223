@@ -67,7 +67,6 @@ bool isCharInWord(const char ch, const string& word)
 string chooseWordFromList(const vector<string>& wordList, int index) 
 {
     // TODO: Return a lowercase word in the index position of the vector wordList.
-    string answer;
     string answer=wordList[index];
     for(int i=0;i<answer.length();i++) answer[i]=tolower(answer[i]);
     return answer;
@@ -81,7 +80,6 @@ string chooseWordFromList(const vector<string>& wordList, int index)
 ***/
 string generateHiddenCharacters(string answerWord){
     // TODO: Based on answerWord's length, generate hidden characters in form of "---"
-    string secretWord;
     string secretWord=answerWord;
     for(int i=0;i<answerWord.length();i++) secretWord[i]='-';
     return secretWord;
